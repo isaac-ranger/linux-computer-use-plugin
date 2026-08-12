@@ -1,0 +1,9 @@
+{
+  "mcpServers": {
+    "linux-computer-use": {
+      "command": "./bin/launch-computer-use-linux.sh",
+      "args": ["mcp"],
+      "cwd": "."
+    }
+  }
+}

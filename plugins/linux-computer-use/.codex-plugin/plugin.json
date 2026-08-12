@@ -1,0 +1,29 @@
+{
+  "name": "linux-computer-use",
+  "version": "0.1.0",
+  "description": "Unofficial local Linux desktop control through the computer-use-linux MCP server.",
+  "author": {
+    "name": "Carl",
+    "url": "https://github.com/isaac-ranger"
+  },
+  "homepage": "https://github.com/isaac-ranger/linux-computer-use-plugin",
+  "repository": "https://github.com/isaac-ranger/linux-computer-use-plugin",
+  "license": "MIT",
+  "keywords": ["linux", "desktop", "computer-use", "mcp", "accessibility"],
+  "skills": "./skills/",
+  "mcpServers": "./.mcp.json",
+  "interface": {
+    "displayName": "Linux Computer Use",
+    "shortDescription": "Unofficial local Linux desktop control.",
+    "longDescription": "Inspect and control local Linux applications through AT-SPI, desktop portals, and compositor-aware window integrations.",
+    "developerName": "Carl",
+    "category": "Productivity",
+    "capabilities": ["Interactive", "Write"],
+    "websiteURL": "https://github.com/isaac-ranger/linux-computer-use-plugin",
+    "defaultPrompt": [
+      "Check whether Linux Computer Use is ready.",
+      "List the open Linux desktop applications.",
+      "Inspect the currently focused window."
+    ]
+  }
+}
