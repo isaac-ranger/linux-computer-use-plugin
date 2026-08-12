@@ -1,0 +1,26 @@
+name: Validate plugin
+
+on:
+  push:
+  pull_request:
+
+permissions:
+  contents: read
+
+jobs:
+  validate:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Validate JSON
+        run: |
+          python3 -m json.tool .agents/plugins/marketplace.json >/dev/null
+          python3 -m json.tool plugins/linux-computer-use/.codex-plugin/plugin.json >/dev/null
+          python3 -m json.tool plugins/linux-computer-use/.mcp.json >/dev/null
+      - name: Verify release artifacts
+        working-directory: plugins/linux-computer-use/bin
+        run: sha256sum -c checksums.sha256
+      - name: Check launcher syntax
+        run: sh -n plugins/linux-computer-use/bin/launch-computer-use-linux.sh
+      - name: Test MCP handshake
+        run: python3 scripts/check_mcp.py
